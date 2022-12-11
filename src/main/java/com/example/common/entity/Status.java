@@ -1,4 +1,4 @@
-package com.example.overnightweb.entity;
+package com.example.common.entity;
 
 public enum Status {
     ACTIVE,

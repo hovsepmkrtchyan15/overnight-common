@@ -1,6 +1,6 @@
-package com.example.overnightweb.repository;
+package com.example.common.repository;
 
-import am.itspace.overnight.entity.Comment;
+import com.example.common.entity.Comment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CommentRepository extends JpaRepository<Comment,Integer> {

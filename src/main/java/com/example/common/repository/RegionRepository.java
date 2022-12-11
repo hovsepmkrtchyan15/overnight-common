@@ -1,6 +1,6 @@
-package com.example.overnightweb.repository;
+package com.example.common.repository;
 
-import am.itspace.overnight.entity.Region;
+import com.example.common.entity.Region;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

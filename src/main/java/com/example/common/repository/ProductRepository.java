@@ -1,6 +1,6 @@
-package com.example.overnightweb.repository;
+package com.example.common.repository;
 
-import am.itspace.overnight.entity.Product;
+import com.example.common.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductRepository extends JpaRepository<Product,Integer> {
