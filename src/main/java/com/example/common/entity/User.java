@@ -1,5 +1,6 @@
 package com.example.common.entity;
 
+import javax.naming.Name;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
@@ -8,7 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 
 @Data
@@ -35,6 +36,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     private RoleUser role;
     @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "enum default 'IN_PENDING'")
     private StatusSeller status;
     private boolean isEnabled;
     private String verifyToken;
