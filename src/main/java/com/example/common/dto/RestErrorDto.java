@@ -5,15 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.NotNull;
-
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class AttributeCreateDto {
+public class RestErrorDto {
 
-    @NotNull(message = "cannot be null")
-    private String name;
-
+    private int statusCode;
+    private String errorMessage;
 }

@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.Date;
+import java.util.Optional;
 
 
 public interface UserBookRepository extends JpaRepository<UserBook, Integer> {
@@ -18,5 +19,6 @@ public interface UserBookRepository extends JpaRepository<UserBook, Integer> {
 
     Page<UserBook> findByProductNameContaining(Pageable pageable, String keyword);
 
+    Optional<UserBook> findUserBooksByUserIdAndProductId(int id, int id1);
 }
 

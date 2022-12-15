@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Email;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,6 +16,7 @@ public class UserUpdateDto {
     private int id;
     private String name;
     private String surname;
+    @Email
     private String email;
     private String pic_url;
 
