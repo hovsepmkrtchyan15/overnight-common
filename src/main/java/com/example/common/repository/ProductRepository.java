@@ -7,16 +7,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
-
 import java.util.List;
 import java.util.Optional;
 
-public interface ProductRepository extends JpaRepository<Product,Integer>, QuerydslPredicateExecutor<Product> {
+public interface ProductRepository extends JpaRepository<Product, Integer>, QuerydslPredicateExecutor<Product> {
     Page<Product> findProductsByUserId(int id, Pageable pageable);
 
     Optional<Product> findByName(String name);
 
-@Query(value = "SELECT u FROM  Product  u WHERE u.rating = 5")
-    List<Product> findByRatingTop20();
+    @Query(value = "SELECT p.* FROM  product p order by p.rating desc limit 10", nativeQuery = true)
+    List<Product> findTopTen();
 
 }
