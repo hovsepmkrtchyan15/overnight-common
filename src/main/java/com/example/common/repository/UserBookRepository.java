@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -20,5 +21,8 @@ public interface UserBookRepository extends JpaRepository<UserBook, Integer> {
     Page<UserBook> findByProductNameContaining(Pageable pageable, String keyword);
 
     Optional<UserBook> findUserBooksByUserIdAndProductId(int id, int id1);
+
+    @Query(value = "from UserBook ub where ub.startDate BETWEEN :to AND :from OR ub.endDate BETWEEN :to AND :from")
+    Optional<List<UserBook>> findUserBookOrders(@Param("to") Date to, @Param("from") Date from);
 }
 

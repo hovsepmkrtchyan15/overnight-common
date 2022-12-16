@@ -20,7 +20,7 @@ public class UserRegisterDto {
 
     private String name;
     private String surname;
-    @Email
+    @Email(message = "must be in the format of an email address")
     private String email;
     @Size(min = 4, max = 8, message = "Password must be between 4 and 8 characters")
     @NotNull(message = "cannot be null")

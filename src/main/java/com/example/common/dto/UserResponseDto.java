@@ -17,7 +17,7 @@ public class UserResponseDto {
     private int id;
     private String name;
     private String surname;
-    @Email
+    @Email(message = "must be in the format of an email address")
     private String email;
     private String pic_url;
     private StatusSeller status;

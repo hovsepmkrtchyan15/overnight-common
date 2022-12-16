@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 @Builder
 public class UserAuthDto {
 
-    @Email
+    @Email(message = "must be in the format of an email address")
     @NotNull(message = "cannot be null")
     private String email;
 
