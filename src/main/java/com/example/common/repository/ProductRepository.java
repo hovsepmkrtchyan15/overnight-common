@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ProductRepository extends JpaRepository<Product, Integer>, QuerydslPredicateExecutor<Product> {
-    Page<Product> findProductsByUserId(int id, Pageable pageable);
+    Page<Product> findProductsByUserEmail(String email, Pageable pageable);
 
     Optional<Product> findByName(String name);
 

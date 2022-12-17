@@ -24,5 +24,10 @@ public interface UserBookRepository extends JpaRepository<UserBook, Integer> {
 
     @Query(value = "from UserBook ub where ub.startDate BETWEEN :to AND :from OR ub.endDate BETWEEN :to AND :from")
     Optional<List<UserBook>> findUserBookOrders(@Param("to") Date to, @Param("from") Date from);
+
+
+    List<UserBook> findUserBookByStartDate(Date date);
+
+    List<UserBook> findUserBookByEndDate(Date date);
 }
 
